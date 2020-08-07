@@ -11,7 +11,7 @@ use modules\Users;
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
     <h1 class="h2">Temporary List</h1>
     <div class="">
-        <a href="<?= BASE_URL . "import-csv/add-student" ?>" class="btn btn-outline-primary btn-sm">Import Student</a>
+        <a href="<?= BASE_URL . "import-csv?step=2" ?>" class="btn btn-outline-primary btn-sm">Move to Student List</a>
         <!--        <a href="--><?//= BASE_URL . "import-csv" ?><!--" class="btn btn-outline-primary btn-sm">Add Multiple Student (Import CSV)</a>-->
     </div>
 </div>

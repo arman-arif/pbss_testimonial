@@ -31,6 +31,9 @@ $dataHeader = array(
 );
 
 
+$stuList = $st->temp_list();
+$serial_no = 1;
+
 
 ?>
 
@@ -48,13 +51,30 @@ $dataHeader = array(
                 ?></tr>
             </thead>
             <tbody><?php
-            for ($i=1;$i<count($data);$i++):
-                ?><tr><?php
-                foreach ($data[$i] as $datum):
-                    ?><th><?= $datum ?></th><?php
-                endforeach;
-                ?></tr><?php
-            endfor;
+            foreach ($stuList as $item):
+                ?><tr<?= ($item->result_status == "Failed")?' class="table-danger"':'' ?>><td><?= $serial_no++ ?></td><td><?=
+                    $item->stu_name ?></td><td><?=
+                    $item->father ?></td><td><?=
+                    $item->mother ?></td><td><?=
+                    $item->gender ?></td><td><?=
+                    $item->village ?></td><td><?=
+                    $item->post_office ?></td><td><?=
+                    $item->post_code ?></td><td><?=
+                    $item->upazilla ?></td><td><?=
+                    $item->district ?></td><td><?=
+                    $item->exam_name ?></td><td><?=
+                    $item->borad_name ?></td><td><?=
+                    $item->exam_year ?></td><td><?=
+                    $item->group_tread ?></td><td><?=
+                    $item->result_status ?></td><td><?=
+                    $item->result ?></td><td><?=
+                    $item->roll_no ?></td><td><?=
+                    $item->exam_centre ?></td><td><?=
+                    $item->reg_no ?></td><td><?=
+                    $item->session ?></td><td><?=
+                    $item->date_of_birth ?></td><td><?=
+                    $item->phone_number ?></td></tr><?php
+            endforeach;
             ?></tbody>
         </table>
     </div>
@@ -63,6 +83,6 @@ $dataHeader = array(
     <span></span>
     <span>
         Move student information from temporary database to permanent
-        <a id="btnNextStep2" href="<?= BASE_URL . "import-csv?step=2&file=" . $_GET['file'] ?>" class="btn btn-sm btn-primary">Move to Database &gt;   </a>
+        <a id="btnNextStep2" href="<?= BASE_URL . "import-csv?step=2&file=" . $_GET['file'] ?>" class="btn btn-sm btn-primary">Move to Student Database &gt;   </a>
     </span>
 </div>
