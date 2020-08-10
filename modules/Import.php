@@ -73,7 +73,7 @@ class Import implements Controller
         $csv_file = $upload->uploadCSV("upload_csv");
         if ($csv_file) {
             $unique_hash = substr(md5(time()) . md5(rand(0,999999999)),0,17);
-            $query = "INSERT INTO $this->table (file_name, uploaded, hash) VALUES  ('$csv_file', now(), '$unique_hash')";
+            $query = "INSERT INTO $this->table (file_name,uploaded,`hash`) VALUES  ('$csv_file', now(), '$unique_hash')";
             if ($this->database->insert($query)){
                 Session::set('message', "File uploaded successfully");
             }
@@ -114,7 +114,7 @@ class Import implements Controller
     }
 
     public function get_unimported_csv(){
-        $query = "SELECT * FROM $this->table WHERE imported IS NULL ORDER BY id DESC";
+        $query = "SELECT * FROM $this->table WHERE imported IS NULL AND `status` IS NULL ORDER BY id DESC";
         $result = $this->database->select($query);
         $data = array();
         foreach ($result as $row) {
@@ -260,8 +260,16 @@ class Import implements Controller
             SELECT tcert_id,stu_name,father,mother,gender,village,post_office,post_code,upazilla,district,exam_name,borad_name,exam_year,group_tread,result_status,result,roll_no,exam_centre,reg_no,`session`,date_of_birth,phone_number
             FROM temp_list_for_testimonial";
 
+        if ($this->database->delete($query))
+            return true;
+        return 0;
+    }
 
-
+    public function update_invalid_csv($hash){
+        $query="UPDATE imported_csv_files SET status='invalid' WHERE hash = '${hash}'";
+        if ($this->database->update($query))
+            return true;
+        return false;
     }
 
     public function decorate_csv_data($data){

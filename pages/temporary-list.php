@@ -5,12 +5,19 @@ use libraries\Session;
 use modules\Users;
 
 //this is the content body for student list page
+
+$stuList = $this->temp_list();
 ?>
 
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
-    <h1 class="h2">Temporary List</h1>
+    <div>
+        <h1 class="h2 d-inline mr-2">Temporary List</h1>
+        <span class="text-info">[ <?= $stuList->rowCount(); ?> Students Information are here ]</span>
+    </div>
+
     <div class="">
+        <a href="javascript: void;" class="btn btn-outline-danger btn-sm" id="emptyTmpList">Empty Temporary</a>
         <a href="<?= BASE_URL . "import-csv?step=2" ?>" class="btn btn-outline-primary btn-sm">Move to Student List</a>
         <!--        <a href="--><?//= BASE_URL . "import-csv" ?><!--" class="btn btn-outline-primary btn-sm">Add Multiple Student (Import CSV)</a>-->
     </div>
@@ -44,14 +51,14 @@ use modules\Users;
             </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="stuList">
 
         <?php
-        $stuList = $this->temp_list();
+
         $serial_no=1;
         ?>
         <?php foreach ($stuList as $item): ?>
-            <tr class="align-middle">
+            <tr class="align-middle<?= ($item->result_status == 'Failed') ? " table-danger" : "" ?>">
                 <td class="text-center">
                     <?= str_pad($serial_no++, 3, '0', STR_PAD_LEFT) ?> <?= str_pad($item->temp_id, 6, '0', STR_PAD_LEFT); ?> <br>
                     <?= substr($item->tcert_id,2,strlen($item->tcert_id)) ?> <br>
@@ -88,9 +95,8 @@ use modules\Users;
                     <?= $item->result . ' (' .ucfirst($item->result_status). ')' ?>
                 </td>
                 <td class="text-center">
-                    <span class="badge badge-danger mb-2">Not Printed</span> <br>
-                    <a href="<?= '#info?stud-id=12' ?>" class="btn btn-outline-info btn-sm"><span class="ti-info-alt"></span></a>
-                    <a href="<?= BASE_URL . 'delete?temp&stu-id=' . $item->temp_id ?>" class="btn btn-outline-danger btn-sm"><span class="ti-trash"></span></a>
+                    <a data-action="tmp-info" href="<?= '#info?stud-id=' . $item->temp_id ?>" class="btn btn-outline-info btn-sm" data-id="<?= $item->temp_id ?>"><span class="ti-info-alt"></span></a>
+                    <a data-action="delete" href="<?= BASE_URL . 'delete?temp&stu-id=' . $item->temp_id ?>" class="btn btn-outline-danger btn-sm"><span class="ti-trash"></span></a>
                 </td>
             </tr>
         <?php endforeach; ?>

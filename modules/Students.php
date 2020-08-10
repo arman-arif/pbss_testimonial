@@ -77,6 +77,8 @@ class Students implements Controller {
         $script = FontEnd::jquery_ui('js');
         $script .= FontEnd::local_component('assets/modules/students.jquery.js', 'js');
         $script .= FontEnd::alertify('js');
+        $script .= FontEnd::sweetalert2();
+        $script .= FontEnd::bootboxjs();
         if (isset($this->uri[1])){
             switch ($this->uri[1]){
                 case 'add-student':
@@ -174,7 +176,15 @@ class Students implements Controller {
     }
 
     public function student_list(){
-        $query = "SELECT * FROM student_info_for_testimonial";
+        $query = "SELECT * FROM student_info_for_testimonial order by exam_year,roll_no";
+        $pdo = $this->database->getPdo();
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function certificate_printed_list() {
+        $query = "SELECT * FROM student_info_for_testimonial where last_printed is not null order by exam_year,roll_no";
         $pdo = $this->database->getPdo();
         $stmt = $pdo->prepare($query);
         $stmt->execute();
@@ -187,6 +197,22 @@ class Students implements Controller {
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         return $stmt;
+    }
+
+    public function get_stu_info($id){
+        $pdo = $this->database->getPdo();
+        $query = "SELECT * FROM student_info_for_testimonial WHERE sl_id=:id";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam('id',$id);
+        return $stmt->execute() ? $stmt : false;
+    }
+
+    public function get_tmp_info($id){
+        $pdo = $this->database->getPdo();
+        $query = "SELECT * FROM temp_list_for_testimonial WHERE temp_id=:id";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam('id',$id);
+        return $stmt->execute() ? $stmt : false;
     }
 
 

@@ -1,0 +1,80 @@
+Student Name,Father Name,Mother Name,Gender,Village,Post Office,Post Code,Upazilla,District,Exam Name,Board Name,Passing Year,Group/Tread,Result Status,Result,Roll No,Exam Center,Registration No,Session,DoB (yyyy-mm-dd),Phone Number
+ Kaniz Fatema,Md. Mojibar Rahman,Mst.Tahera,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,4.89,115443,Dighalia,1713110090,2018-2019,2003-02-02,01912192184
+Monisha Biswas,Gobinda Kumar Biswas,Asa Biswas,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,4.67,115444,Dighalia,1713110095,2018-2019,2004-02-29,01921946422
+Md.Ebrahim Sheikh,Md. Kalam Maji,Shahina Begum,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,5.00,115445,Dighalia,1713110088,2018-2019,2004-01-10,01998316467
+Md. Tariqul Islam Nishat,Abdul Jalil Sarder,Lasmi Begum,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,4.11,115446,Dighalia,1713110102,2018-2019,2003-09-28,01725465192 
+Mahadi Hasan Topu,Md.Tabibur Rahman,Mahmuda Akthary Lipi,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Failed,0.0,115447,Dighalia,1713110104,2018-2019,2004-11-18,01943524732 
+Md. Symun Ahmmed Siam,Md.Humayun,Sumi Begum,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,4.5,115448,Dighalia,1713110171,2018-2019,2003-12-12,01949634285 
+Sadiya Akter,Keramot Ali,Shahida Begum ,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,2.61,248781,Dighalia,1510578765,2018-2019,2002-07-08,01758219076 
+Munni Akter Akhi,Md.Jamal Hossain,Mst.Rahela Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,2.83,248782,Dighalia,1613610600,2018-2019,2004-07-10,01921542337
+Shathi Khatun ,Rezaul Sheikh,Salma Megum ,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,2.67,248783,Dighalia,1613610661,2018-2019,2004-11-14,01622843464
+Methila Khatun ,Mustafizur Rahman,Lutfa Begum,Female,Mominpur,,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.5,248784,Dighalia,1713110100,2018-2019,2003-03-02,01945404485
+Sumi Khatun ,Md. jahurul Haq,Rexona Begum ,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,4.22,248785,Dighalia,1713110101,2018-2019,2005-06-10,01980943895
+Suraiya Huda Ratri,Shak Nurul Huda ,Rekha Begum ,Female,Chandonimohal,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,4.33,248786,Dighalia,1713110103,2018-2019,2004-06-17,01406439951
+Lamia Khatun ,Md.Faruk Hossain,Moonjila begum ,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,4.44,248787,Dighalia,1713110105,2018-2019,2004-03-22,01935012944
+Sultana Khatun ,Hannan Biswas,Nasrin Begum ,Female,Panigati,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,3.72,248788,Dighalia,1713110106,2018-2019,2003-10-14,01941266034
+Sadia Islam ,Md. Moirul Islam,Romana Islam ,Female,Mominpur,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.72,248789,Dighalia,1713110107,2018-2019,2004-01-01,01767090328
+Pharhana Sultana Happy,Akram Sheikh,Hena Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.61,248790,Dighalia,1713110110,2018-2019,2004-12-20,01962034054
+Tajmin Nahar Retu,Shimul Kha,Nazma Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,3.06,248791,Dighalia,1713110111,2018-2019,2003-01-25,01909592225
+Oishi Khatun,Md. Abdul Aziz,Swapna Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Failed,Fail,248792,Dighalia,1713110116,2018-2019,2003-12-01,01924378305
+Amina Khatun ,Md.Bachsu Molla,Halima Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,4.28,248793,Dighalia,1713110117,2018-2019,2003-10-03,01933 640187
+Dilruba Yasmin Mim,Late.Humayun Mollah,Rehena Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Failed,Fail,248794,Dighalia,1713110120,2018-2019,2003-01-21,01923074644
+Rakhi Khatun,Md.Tabibur Molla,Mst.Ratna Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,2.89,248795,Dighalia,1713110122,2018-2019,2004-03-03,01962025506
+Mst.Chadni Khatun ,Keramat Sheikh,Panna Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Failed,Fail,248796,Dighalia,1713110129,2018-2019,2003-06-06,01795222828
+Mst.Lima Akter,Niamat Ali,Khadiza Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,3.17,248797,Dighalia,1713110131,2018-2019,2003-08-07,01982008843
+Sonia Sultana,Halim Kha,Doly Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.72,248798,Dighalia,1713110132,2018-2019,2003-12-01,01961176098
+Sumaya Akthry,Md.Alamgir,Mst.Salma,Female,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.11,248799,Dighalia,1713110137,2018-2019,2003-01-21,01404718432
+Shila Khatun,Siraj Sheikh,Rony Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Failed,Fail,248800,Dighalia,1713110140,2018-2019,2003-02-21,01969841616
+Fatema Khanom,Md.Owahidujjaman,Piyari Begum,Female,Panigati,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,4.33,248801,Dighalia,1713110152,2018-2019,2002-11-13,01917703163
+Afsana Akter,Md.Mizanur Sheikh,Shilpi Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.61,248802,Dighalia,1713110155,2018-2019,2003-08-01,01963993865
+Lija Khanom,Md.Owahidujjaman,Piyari Begum,Female,Panigati,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,4.22,248803,Dighalia,1713110156,2018-2019,2004-11-08,01756397100
+Sumaiya Afrin Amely,Nuru Sarder,Nasima Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.67,248804,Dighalia,1713110162,2018-2019,2003-07-24,01927408548
+Rima Khatun,Md.Rekmot Shekh,Hasina Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,2.89,248805,Dighalia,1713110172,2018-2019,2003-02-20,01952985974
+Moniya Khatun,Akter Molla,Rozina Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,3.5,248806,Dighalia,1713110216,2018-2019,2003-07-12,01946425284
+Miss.Rupa,Golam Rosul,Manoara Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.56,248807,Dighalia,1713110217,2018-2019,2003-11-04,01930580914
+Akhi Kulsum,Md.Habibur Rahman Molla,Sahinur Begum,Female,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Failed,Fail,248808,Dighalia,1413254934,2016-2017,2001-05-10,
+Ruckshana Khatun Bithe,Md.Younus Ali,Selena Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,3.5,248809,Dighalia,1513510364,2016-2017,2000-05-05,01957547783
+Sanjida Afrin Sania,Sk.Ayub Ali,Rafia Begum,Female,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Failed,Fail,248810,Dighalia,1613610559,2017-2018,2004-05-28,
+Sathe Das,Gobindo Chondro Das,Rikta Rani Das,Female,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,2.89,248811,Dighalia,1613610562,2017-2018,2002-02-22,
+Akhi Khatun,Md.Altaf Hossain,Selina Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,2.94,248812,Dighalia,1613610571,2017-2018,2002-01-19,01408122218
+Suriya Akthery,Md.Abdul Mannan,Lipi Begum,Female,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,2.89,248813,Dighalia,1613610652,2017-2018,2001-08-16,
+Pollob Kumar Biswas,Nitai Chandra Biswas,Tithi Biswas,Male,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,4.5,248814,Dighalia,1713110093,2018-2019,2003-07-31,01745388691
+Md.Rahan Khan,Md.Liton,Mrs.Chompa Begum,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,4.00,248815,Dighalia,1713110139,2018-2019,2004-02-05,01824555569
+Md.Monirul Islam Sheikh,Shidul Sheikh,Rimpa Begum,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.61,248816,Dighalia,1713110142,2018-2019,2003-07-04,01965419340
+Sabbir Hossain,Md.Uzir Farazi,Ennas Begum,Male,Kamargati ,,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.00,248817,Dighalia,1713110143,2018-2019,2003-08-05,01778472817
+Jaminur ,Saud Shaikh,Asia Begum,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Failed,Fail,248818,Dighalia,1713110148,2018-2019,2003-01-27,01408426847
+Md.Rasel Shake,Aiub Shake,Masura Begum,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.17,248819,Dighalia,1713110159,2018-2019,2004-01-01,01927401493
+Shahadot Sheikh ,Jamir Sheikh ,Sabina Begum ,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Failed,Fail,248820,Dighalia,1713110160,2018-2019,2005-04-12,01704636225
+Sumon Sheikh ,Md. Imdadul Sheikh ,Mina Begum ,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,3.33,248821,Dighalia,1713110174,2018-2019,2003-12-17,019375608/42
+Md. Ratul Sheikh ,Hasan Sheikh ,Polly Begum ,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.00,248822,Dighalia,1713110181,2018-2019,2003-09-02,01906355236
+Md. Sabuj Sardar ,Md. Aslam Sardar ,Sabina Begum ,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,2.56,248823,Dighalia,1713110189,2018-2019,2003-11-07,01745207907
+Md. Jahidul Islam ,Md. Abdur Salam ,Ms. Shufia Begum ,Male,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Failed,Absent,248824,Dighalia,1413254926,2015-2016,2001-02-04,Nil
+Md. Tanvir kazi ,Md. Emamul Kazi,Saleha Begum ,Male,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Failed,Fail ,248825,Dighalia,1513510455,2016-2017,2002-04-02,Nil
+Mehedi Hasan,Nur Islam,Rimi Begum,Male,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,2.17,248826,Dighalia,1513532042,2017-2018,2001-08-29,Nil
+Tamim Islam Molla,Md.Joinal M0lla,Sathi Khatun,Male,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,2.67,248827,Dighalia,1613610614,2017-2018,2002-11-03,Nil
+Md.Sumon Sheikh,Sirazul Islam,Firoja Begum,Male,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,2.89,248828,Dighalia,1613610640,2017-2018,2002-05-15,01937560842
+Md.Hasibul Hosan Santo,Md.Nur Alam,Halima Begum,Male,Bogdia,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,2.5,248829,Dighalia,1613610647,2017-2018,2002-03-09,01950135293
+Md. Asad Sheikh,Md.AslamSheikh,Rokeya Begum,Male,,,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,2.72,248830,Dighalia,1613823798,2017-2018,2002-05-02,Nil
+Mst.Raifa Islam Eva,Md.Hafizur Rahman,Hosneara Begum,Female,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,4.67,512353,Dighalia,1713110092,2018-2019,2005-11-21,0177340005
+Neshita Biswas,Mohadeb Biswas,Kakoli Rani Biswas,Female,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,4.78,512354,Dighalia,1713110094,2018-2019,2004-10-26,01316487600
+Mst.Mita Islam,Mizanur Rahman,Zaheda Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,4.44,512355,Dighalia,1713110096,2018-2019,2003-04-23,01926315974
+Mst.Fahmida Khatun,S.M Azad Ali,Runa Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.61,512356,Dighalia,1713110098,2018-2019,2005-03-03,01787462560
+Lamia Aktar Ritu,Md.Akram Biswas,Mrs.China Begum,Female,Panigati,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.72,512357,Dighalia,1713110099,2018-2019,2004-05-05,01404919466
+Akhi Khatun,Md.Ashak Sheikh,Sabina  ,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,4.11,512358,Dighalia,1713110108,2018-2019,2003-08-20,01985529203
+Ummeia Islam,Dinmohammad Sheikh,Rokshona Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,4.44,512359,Dighalia,1713110113,2018-2019,2005-07-14,01725653648
+Bristy Khatun ,Kalam Sheikh,Lipi Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,4.72,512360,Dighalia,1713110115,2018-2019,2004-11-01,01955376028
+Mst.Sadiya Khatun,Md.Abdus Salam Sheikh,Mst. Nazma Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,3.33,512361,Dighalia,1713110126,2018-2019,2002-06-03,01912273270
+Sumaya Khatun,Md.Jasim Molla,Anna Begum,Female,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.39,512362,Dighalia,1713110127,2018-2019,2004-02-05,01719197625
+Khairunnesha,Md.Khalilul Rahman,Amina Begum,Female,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.72,512363,Dighalia,1613610527,2017-2018,2002-04-17,Nil
+Md.Golam Rahman,Md.Nasir Gazi,Shilpi Begum,Male,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,3.67,512364,Dighalia,1613610588,2018-2019,2003-01-23,01677036905
+Md.Ejazul Sarder,Md. Azizul Sarder,Sharmin Aziz,Male,Bogdia,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,4.89,512365,Dighalia,1713109827,2018-2019,2004-09-03,01921731291
+Gazi Md.Tareq Hasan,Md.Ayeub Ali ,Sabina Begum ,Male,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.78,512366,Dighalia,1713110123,2018-2019,2004-07-16,01927024329
+Arizul Islam,Md.Billal Hossain,Roksana Begum,Male,Katanipara ,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,4.00,512367,Dighalia,1713110130,2018-2019,2003-11-15,Nil
+Mujahidul Islam ,Md.Mazid Sheikh,Johaha Begum,Male,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,4.44,512368,Dighalia,1713110133,2018-2019,2004-10-25,01915052067
+Md.Sayid Hassan,S.M Ferdous Alam,Mina Begum ,,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.98,512369,Dighalia,1713110141,2018-2019,2004-05-15,01925221358
+Moutasin Billa,Azizul Sarder,Rekshona Begum,,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Failed,Fail,512370,Dighalia,1713110157,2018-2019,2003-12-03,01969803487
+Md.Nafiz Ikbal Zim ,Md.Abul Kalam,Nasrin Begum ,,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.94,512371,Dighalia,1713110166,2018-2019,2003-10-16,01946565618
+Md.Ratul Hassan Readoy,Md.Asraf  Laskar,Ashia Begum,,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Failed,Fail,512372,Dighalia,1713110167,2018-2019,2003-09-11,01945153191
+Rabbi Hassen,Md.Alamgir Hossain,Mrs.Jharna Begum,,Hazigram,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Business Studies,Passed,2.83,512373,Dighalia,1713110207,2018-2019,2004-01-17,01946553055
+Md.Thareq Aziz,Md.Rezaul Islam,Seren Sultana,,Bogdia,Senhati,9222,Dighalia,Khulna,SSC,Jashore,2020,Humanities,Passed,3.17,512374,Dighalia,1613610574,2017-2018,2002-01-20,01927689172
+Mikail Hossain,Md.Sawkat Ali,Kohinur Begum,,Bativita,Hazigram,9222,Dighalia,Khulna,SSC,Jashore,2020,Science,Passed,3.00,512375,Dighalia,1613610631,2017-2018,2001-01-29,01994455262

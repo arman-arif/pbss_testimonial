@@ -2,6 +2,8 @@
 
 namespace libraries;
 
+use NumberFormatter;
+
 class Tools
 {
     public static function redirect($loc) {
@@ -93,6 +95,27 @@ class Tools
             return $str;
         }
         return htmlspecialchars_decode(html_entity_decode($str));
+    }
+
+    public static function date_in_words($str_date){
+        //(PHP 5 >= 5.3.0, PHP 7, PECL intl >= 1.0.0) required
+        $fmtYear = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+        $fmtDay = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+        $fmtDay->setTextAttribute(NumberFormatter::DEFAULT_RULESET,"%spellout-ordinal");
+
+        $date = strtotime($str_date);
+        $day = date('d', $date);
+        $year = date('Y', $date);
+
+        $day_in_word = ucwords(strtolower($fmtDay->format($day)));
+        $month_in_word = ucwords(strtolower(date('F', $date)));
+        $year_in_word = ucwords(strtolower($fmtYear->format($year)));
+
+        $final_words = $day_in_word . PHP_EOL;
+        $final_words .= $month_in_word . PHP_EOL;
+        $final_words .= $year_in_word;
+
+        return $final_words;
     }
 
 } // end of class Helper

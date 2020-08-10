@@ -20,7 +20,7 @@ use libraries\Session;
             <th class="text-center">Action</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="csv_list">
         <?php
         if ($csv_files = $this->get_uploaded_csv()) {
             $serial = 1;
@@ -36,14 +36,10 @@ use libraries\Session;
                             <td class="text-center"><?= $csv['uploaded'] ?></td>
                             <td class="text-center"><?= empty($csv['imported']) ? "N/A" : $csv['imported'] ?></td>
                             <td class="text-center">
-                                <a class="mx-1 text-danger"
-                                   href="<?= BASE_URL . 'delete?csv&file=' . $csv['hash'] ?>"><span class="ti-na"
-                                                                                                    title="Delete"></span>
-                                    Delete</a>
-                                <a class="mx-1 text-warning"
-                                   href="<?= '#view/csv-info?file=' . $csv['hash'] ?>"><span class="ti-info-alt"
-                                                                                                   title="Info"></span>
-                                    Info</a>
+                                <a class="mx-1 text-danger" data-action="delete"
+                                   href="<?= BASE_URL . 'delete?csv&file=' . $csv['hash'] ?>"><span class="ti-na" title="Delete"></span> Delete</a>
+                                <a class="mx-1 text-warning" href="<?= '#view/csv-info?file=' . $csv['hash'] ?>"><span class="ti-info-alt" title="Info"></span> Info</a>
+                                <a class="mx-1 text-success" data-action="import" href="<?= BASE_URL . 'import-csv?step=1&file=' . $csv['hash'] ?>"><span class="ti-arrow-circle-right" title="Import"></span> Re-Import</a>
                             </td>
                         </tr>
                     <?php }

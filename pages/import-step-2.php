@@ -83,6 +83,6 @@ $serial_no = 1;
     <span></span>
     <span>
         Move student information from temporary database to permanent
-        <a id="btnNextStep2" href="<?= BASE_URL . "import-csv?step=2&file=" . $_GET['file'] ?>" class="btn btn-sm btn-primary">Move to Student Database &gt;   </a>
+        <a id="btnFinalStep" href="<?= BASE_URL . "import-csv?step=2&file=" . $_GET['file'] ?>" class="btn btn-sm btn-primary">Move to Student Database &gt;   </a>
     </span>
 </div>

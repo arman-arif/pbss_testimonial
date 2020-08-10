@@ -10,9 +10,30 @@ global $uri;
 
 class Delete{
     protected $db = null;
+    static protected $db2 = null;
     public function __construct(){
         $this->db = new Database();
         $this->delete();
+    }
+
+    public static function setDb2(){
+        self::$db2 = new Database();
+    }
+
+    public static function del_all_students(){
+        self::setDb2();
+        $query="DELETE FROM pbss_info.student_info_for_testimonial";
+        if (self::$db2->delete($query))
+            return true;
+        return 0;
+    }
+
+    public static function empty_temp_list(){
+        self::setDb2();
+        $query="DELETE FROM pbss_info.temp_list_for_testimonial";
+        if (self::$db2->delete($query))
+            return true;
+        return 0;
     }
 
     private function delete_from_db($table, $column, $identifier){
@@ -62,8 +83,6 @@ class Delete{
             $this->back();
         }
 
-
-
     }
 
     private function delete_student(){
@@ -108,8 +127,8 @@ class Delete{
                 if ($file)
                     $this->del_upl_dir_file($file->file_name, 'csv');
                 $this->set_deletmsg();
-                //Tools::redirect(BASE_URL . "uploaded-csv");
-                $this->back(BASE_URL.'uploaded-csv');
+                Tools::redirect(BASE_URL . "uploaded-csv");
+//                $this->back(BASE_URL.'uploaded-csv');
             } else {
                 $this->set_errmsg();
                 $this->back();

@@ -26,11 +26,12 @@ class FontEnd {
     private static $bstrap_tables_script = 'assets/vendor/bootstrap-table/bootstrap-table.min.js'; //javascript
     private static $bstrap_tables_export = 'assets/vendor/bootstrap-table/extensions/export/bootstrap-table-export.min.js'; //javascript
     private static $feather_icons        = 'assets/vendor/feather.min.js'; //javascript
-    private static $alertify_script      = 'assets/vendor/alertifyjs/alertify.js'; //javascript
+    private static $alertify_script      = 'assets/vendor/alertifyjs/alertify.min.js'; //javascript
     private static $sweetalert2_js       = 'assets/vendor/sweetalert2.9.js'; //javascript
     private static $table_export         = 'assets/vendor/tableExport.jquery.plugin/tableExport.min.js'; //javascript
     private static $table_export_jspdf   = 'assets/vendor/tableExport.jquery.plugin/libs/jsPDF/jspdf.min.js'; //javascript
     private static $jspdf_autotable      = 'assets/vendor/tableExport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js'; //javascript
+    private static $bootboxjs            = 'assets/vendor/bootbox/bootbox.min.js'; //javascript
 
     //external cdn links
     private static $normalize_style     = 'https://necolas.github.io/normalize.css/8.0.1/normalize.css';
@@ -102,6 +103,10 @@ class FontEnd {
 
     public static function popperjs(){
         return self::local_component(self::$popperjs_script, 'js');
+    }
+
+    public static function bootboxjs(){
+        return self::local_component(self::$bootboxjs, 'js');
     }
 
     public static function sweetalert2(){

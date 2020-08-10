@@ -5,14 +5,30 @@ use libraries\Session;
 use modules\Users;
 
 //this is the content body for student list page
+$stuList = $this->student_list();
 ?>
 
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
-    <h1 class="h2">Student List</h1>
-    <div class="">
+    <div>
+        <h1 class="h2 d-inline mr-2">Student List</h1>
+        <span class="text-info">[ <?= $stuList->rowCount(); ?> Students Information are here ]</span>
+    </div>
+    <div class="btn-group" role="group">
         <a href="<?= BASE_URL . "student-list/add-student" ?>" class="btn btn-outline-primary btn-sm">Add Student</a>
-<!--        <a href="--><?//= BASE_URL . "import-csv" ?><!--" class="btn btn-outline-primary btn-sm">Add Multiple Student (Import CSV)</a>-->
+
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item text-primary" href="<?= BASE_URL . "import-csv" ?>">Import CSV</a>
+                <a class="dropdown-item text-primary" href="javascript: void()">Archive All</a>
+                <a class="dropdown-item text-danger" href="javascript: void()" id="deleteStudentAll">Delete All</a>
+            </div>
+
+        </div>
+<!--        <a href="--><!--" class="btn btn-outline-primary btn-sm">Add Multiple Student (Import CSV)</a>-->
     </div>
 </div>
 <div class="table-responsive">
@@ -47,11 +63,10 @@ use modules\Users;
         <tbody id="stuList">
 
 <?php
-$stuList = $this->student_list();
 $serial_no=1;
 ?>
 <?php foreach ($stuList as $item): ?>
-        <tr class="align-middle">
+        <tr class="align-middle<?= ($item->result_status == 'Failed') ? " table-danger" : "" ?>">
             <td class="text-center">
                 <?= str_pad($serial_no++, 3, '0', STR_PAD_LEFT) ?>-<?= str_pad($item->sl_id, 6, '0', STR_PAD_LEFT); ?> <br>
                 <?= $item->tcert_id ?> <br>
@@ -88,8 +103,9 @@ $serial_no=1;
                 <?= $item->result . ' (' .ucfirst($item->result_status). ')' ?>
             </td>
             <td class="text-center">
-                <span class="badge badge-danger mb-2">Not Printed</span> <br>
-                <a data-action="info" href="<?= '#info?stud-id=' . $item->sl_id ?>" class="btn btn-outline-info btn-sm"><span class="ti-info-alt"></span></a>
+                <?php $printed = empty($item->last_printed) ?>
+                <span class="badge <?= $printed ? "badge-danger" : "badge-success" ?> mb-2"><?= $printed ? 'Not Printed Yet' : 'Already Printed' ?></span> <br>
+                <a data-action="info" href="<?= '#info?stud-id=' . $item->sl_id ?>" class="btn btn-outline-info btn-sm" data-id="<?= $item->sl_id ?>"><span class="ti-info-alt"></span></a>
                 <a data-action="delete" href="<?= BASE_URL . 'delete?student&stud-id=' . $item->sl_id ?>" class="btn btn-outline-danger btn-sm"><span class="ti-trash"></span></a>
                 <a data-action="print" href="<?= BASE_URL . 'certificate/print?stud-id=' . $item->sl_id ?>" class="btn btn-outline-success btn-sm"><span class="ti-printer"></span></a>
             </td>

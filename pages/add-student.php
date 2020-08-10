@@ -124,8 +124,8 @@ use modules\Users;
                 <div class="col-sm-4">
                     <select name="centre" id="centre" class="form-control custom-select" required>
                         <option value="">-- Select Exam Centre --</option>
-                        <option value="Senhati">398 - Senhati</option>
-                        <option value="Dighalia">397 - Dighalia</option>
+                        <option value="Senhati">Senhati</option>
+                        <option value="Dighalia">Dighalia</option>
                     </select>
                 </div>
             </div>
@@ -157,8 +157,8 @@ use modules\Users;
                 <div class="col-sm-4">
                     <select name="status" id="status" class="form-control form-control-sm" required>
                         <option value="">-- Select Result --</option>
-                        <option value="passed">Passed</option>
-                        <option value="failed">Failed</option>
+                        <option value="Passed">Passed</option>
+                        <option value="Failed">Failed</option>
                     </select>
                 </div>
             </div>

@@ -13,59 +13,105 @@ $(document).ready(function () {
             function(){
                 alertify.closeAll();
                 SweetAlert.fire({
-                    title: 'Great!',
-                    html: 'Adding data to temp db. <br>You will be redirected to next step. <br>Please wait...',
+                    title: 'Okay',
+                    html: 'Importing data to temp database. <br>You will be redirected to next step. <br>Please wait...',
                     icon: 'success',
                     showConfirmButton: false,
                     allowOutsideClick: false,
-                    allowEscapeKey: false
+                    allowEscapeKey: false,
+                    timer: 2500,
+                    timerProgressBar: true
                 });
-                setTimeout(function () {
-                    Swal.close();
-                    $('#loader-modal').removeClass('hide');
-                    $.ajax({
-                        url: `http://${window.location.hostname}/pbss_testimonial/post?imp-csv-to-tmp&file=${fileHash}`,
-                        type: 'GET',
-                        // dataType: "JSON",
-                        success: function(result){
-                            // console.log(result);
-                            $('#loader-modal').addClass('hide');
-                            SweetAlert.fire({
-                                title: 'Great!',
-                                html: result,
-                                icon: 'success',
-                                timer: 2000,
-                                onClose: window.location.replace(`http://${window.location.hostname}/pbss_testimonial/import-csv?step=2`)
-                            }).then(result)
-                            {
-                                if (result.value){
-                                    setInterval(function () {
-                                        // window.location.replace(`http://${window.location.hostname}/pbss_testimonial/import-csv?step=2`);
-                                    }, 2000)
-                                }
-                            }
-                        }
-                    });
-                   // window.location.replace(nextStep);
-                },2500);
+                Swal.close();
+                $('#loader-modal').removeClass('hide');
+                $.ajax({
+                    url: `http://${window.location.hostname}/pbss_testimonial/post?imp-csv-to-tmp&file=${fileHash}`,
+                    type: 'GET',
+                    // dataType: "JSON",
+                    success: function(result){
+                        $('#loader-modal').addClass('hide');
+                        SweetAlert.fire({
+                            title: 'Success',
+                            html: result,
+                            icon: 'success',
+                            timer: 2000,
+                            timerProgressBar: true,
+                            //onClose: window.location.replace(`http://${window.location.hostname}/pbss_testimonial/import-csv?step=2`)
+                        }).then(function () {
+                            window.location.replace(`http://${window.location.hostname}/pbss_testimonial/import-csv?step=2`)
+                        });
+
+                    }
+                });
+
 
             },
             function(){ alertify.error('Declined').delay(2) }
         ).setting({
             'labels': {ok: 'Yes', cancel: 'No'},
             'movable': false,
+            'closable': false,
+            'closableByDimmer': false
+        });
+    });
+
+    $('#btnFinalStep').on('click', function (e) {
+        e.preventDefault();
+        let nextStep = $('#btnFinalStep').attr('href');
+        alertify.confirm(
+            'Confirmation',
+            'Are you sure, you want to proceed to final step?',
+            function(){
+                alertify.closeAll();
+                SweetAlert.fire({
+                    title: 'Okay!',
+                    html: 'Moving data to temp database. <br>You will be redirected to finish page. <br>Please wait...',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    timer: 2500,
+                    timerProgressBar: true
+                });
+
+                Swal.close();
+                $('#loader-modal').removeClass('hide');
+                $.ajax({
+                    url: `http://${window.location.hostname}/pbss_testimonial/post?tmp-to-list`,
+                    type: 'GET',
+                    // dataType: "JSON",
+                    success: function(result){
+                        // console.log(result);
+                        $('#loader-modal').addClass('hide');
+                        SweetAlert.fire({
+                            title: 'Great!',
+                            html: result,
+                            icon: 'success',
+                            // timer: 2000,
+                            // timerProgressBar: true
+                        }).then(function () {
+                            window.location.replace(`http://${window.location.hostname}/pbss_testimonial/student-list`)
+                        });
+                    }
+                });
+
+            },
+            function(){ alertify.error('Declined').delay(2) }
+        ).setting({
+            'labels': {ok: 'Yes', cancel: 'No'},
+            'movable': false,
+            'closable': false,
+            'closableByDimmer': false
         });
     })
 
-    var $th = $('#importCsvDataTbl').find('thead')
+    var $th = $('#importCsvDataTbl').find('thead');
     $('#importCsvDataTbl').on('scroll', function() {
         $th.css('transform', 'translateY('+ this.scrollTop +'px)');
     });
 
     $('#unimported_csv_list tr td').click(function(e){
         e.preventDefault();
-        console.log("clicked");
-
     });
 
     $("#btnImport").click(function (e) {
@@ -80,33 +126,38 @@ $(document).ready(function () {
             success: function(result){
                 unimp_csv.html('');
                 unimp_head.removeClass('d-none');
-                $.each(result,function (i,file) {
-                    let tableBody = document.getElementById("unimported_csv_list");
-                    let tableRow = tableBody.insertRow(tableBody.length);
-                    let cellElem1 = tableRow.insertCell(0);
-                    let cellElem2 = tableRow.insertCell(1);
-                    let cellElem3 = tableRow.insertCell(2);
-                    let cellElem4 = tableRow.insertCell(3);
+                if (result.length > 0) {
+                    $.each(result, function (i, file) {
+                        let tableBody = document.getElementById("unimported_csv_list");
+                        let tableRow = tableBody.insertRow(tableBody.length);
+                        let cellElem1 = tableRow.insertCell(0);
+                        let cellElem2 = tableRow.insertCell(1);
+                        let cellElem3 = tableRow.insertCell(2);
+                        let cellElem4 = tableRow.insertCell(3);
 
-                    let fileLink = document.createElement('a');
-                    fileLink.href = `${window.location.href}#download=${file.file}`;
-                    fileLink.innerText = file.name;
+                        let fileLink = document.createElement('a');
+                        fileLink.href = `${window.location.href}#download=${file.file}`;
+                        fileLink.innerText = file.name;
 
-                    let importLink = document.createElement('a');
-                    importLink.href = `http://${window.location.hostname}/pbss_testimonial/import-csv?step=1&file=${file.file}`;
-                    importLink.innerHTML = 'Import <span data-feather="arrow-right-circle"></span>';
-                    importLink.className = 'text-success';
+                        let importLink = document.createElement('a');
+                        importLink.href = `http://${window.location.hostname}/pbss_testimonial/import-csv?step=1&file=${file.file}`;
+                        importLink.innerHTML = 'Import <span data-feather="arrow-right-circle"></span>';
+                        importLink.className = 'text-success';
 
-                    cellElem1.className = 'text-center';
-                    cellElem4.className = 'text-center';
+                        cellElem1.className = 'text-center';
+                        cellElem4.className = 'text-center';
 
-                    cellElem1.innerHTML = i+1;
-                    cellElem3.innerHTML = file.upload;
+                        cellElem1.innerHTML = i + 1;
+                        cellElem3.innerHTML = file.upload;
 
-                    cellElem2.appendChild(fileLink);
-                    cellElem4.appendChild(importLink);
+                        cellElem2.appendChild(fileLink);
+                        cellElem4.appendChild(importLink);
 
-                });
+                    });
+                } else {
+                    let trow = '<tr><td colspan="4" class="text-center">Nothing found to import</td></tr>';
+                    $('#unimported_csv_list').append(trow);
+                }
 
                 $('#uploadCsvBtn').removeAttr('disabled');
 
@@ -131,17 +182,68 @@ $(document).ready(function () {
         alertify.confirm(
             'Confirmation',
             'Do you want to import the CSV file?',
-            () => {
+            function () {
                 window.location.assign(hrefLoc);
             },
-            () => {
+            function () {
                 alertify.error('Declined').delay(2);
             }
         ).setting({
             'labels': {ok: 'Yes', cancel: 'No'},
             'movable': false,
+            'closable': false,
+            'closableByDimmer': false
         });
 
     });
+
+    $('#csv_list [data-action=delete]').click(function (e) {
+        e.preventDefault();
+        let hrefLoc = $(this).attr('href');
+        alertify.confirm(
+            'Confirmation',
+            'Do you want to delete the CSV file?',
+            function () {
+                window.location.assign(hrefLoc);
+            },
+            function () {
+                alertify.error('Declined').delay(2);
+            }
+        ).setting({
+            'labels': {ok: 'Yes', cancel: 'No'},
+            'movable': false,
+            'closable': false,
+            'closableByDimmer': false
+        });
+
+    });
+
+    $('#backBtnCSV').click(function (e) {
+        e.preventDefault();
+        let uriParam = getParams(window.location.href);
+        $.ajax({
+            url: `http://${window.location.hostname}/pbss_testimonial/post?invalid-csv&file=${uriParam.file}`,
+            type: 'GET',
+            success: function(result){
+                window.history.back();
+            }
+        })
+
+    });
+
+    let getParams = function (url) {
+        let params = {};
+        let parser = document.createElement('a');
+        parser.href = url;
+        let query = parser.search.substring(1);
+        let vars = query.split('&');
+        for (let i = 0; i < vars.length; i++) {
+            let pair = vars[i].split('=');
+            params[pair[0]] = decodeURIComponent(pair[1]);
+        }
+        return params;
+    };
+
+
 
 });

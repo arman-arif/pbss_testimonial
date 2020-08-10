@@ -18,6 +18,7 @@ use libraries\Session;
             <th>File Name</th>
             <th class="text-center">Uploaded On</th>
             <th class="text-center">Imported On</th>
+            <th class="text-center">Status</th>
             <th class="text-center">Action</th>
         </tr>
         </thead>
@@ -33,10 +34,11 @@ use libraries\Session;
                         <td><a href="<?= BASE_URL . 'uploads/csv/' . $csv['file_name'] ?>"><?= $csv['file_name'] ?></a></td>
                         <td class="text-center"><?= $csv['uploaded'] ?></td>
                         <td class="text-center"><?= empty($csv['imported'])?"N/A":$csv['imported'] ?></td>
+                        <td class="text-center"><?= empty($csv['status'])?'<span class="badge badge-warning">Not Imported</span>': '<span class="badge '. (($csv['status']=='invalid')?'badge-danger':'badge-success') .'">'.ucwords($csv['status']).'</span>' ?></td>
                         <td class="text-center">
-                            <a class="mx-1 text-danger" href="<?= BASE_URL . 'delete?csv&file=' . $csv['hash'] ?>"><span class="ti-na" title="Delete"></span> Delete</a>
+                            <a class="mx-1 text-danger" data-action="delete" href="<?= BASE_URL . 'delete?csv&file=' . $csv['hash'] ?>"><span class="ti-na" title="Delete"></span> Delete</a>
                             <a class="mx-1 text-warning" data-action="info" data-csvid="<?= $csv['hash'] ?>" href="#info?csv=<?= $csv['hash'] ?>"><span class="ti-info-alt" title="Info"></span> Info</a>
-                            <a class="mx-1 text-success" data-action="import" href="<?= BASE_URL . 'import-csv?step=1&file=' . $csv['hash'] ?>"><span class="ti-arrow-circle-right" title="Import"></span> <?= empty($csv['imported'])?"Import":"Re-Import" ?></a>
+                            <a class="mx-1<?= empty($csv['imported'])?($csv['status']=='invalid'?" disabled text-muted":" text-success"):" disabled text-muted" ?>" data-action="import" href="<?= BASE_URL . 'import-csv?step=1&file=' . $csv['hash'] ?>"<?= empty($csv['imported'])?"":" disabled" ?><?= $csv['status']=='invalid' ?" disabled":"" ?>><span class="ti-arrow-circle-right" title="Import"></span> Import</a>
                         </td>
                     </tr>
                 <?php }
