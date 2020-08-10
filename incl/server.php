@@ -51,7 +51,7 @@ if (isset($_GET['student-info'])){
                 'result'    => str_pad($row->result,4,0,STR_PAD_RIGHT),
                 'phone'     => $row->phone_number,
                 'dob'     => $row->date_of_birth . " [ ". Tools::date_in_words($row->date_of_birth) ." ]",
-                'last_printed'  => $row->last_printed
+                'last_printed'  => $row->last_printed ? Tools::long_datetime($row->last_printed) : null
             ];
             echo json_encode($data);
         } else {

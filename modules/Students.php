@@ -191,6 +191,14 @@ class Students implements Controller {
         return $stmt;
     }
 
+    public function non_printed_list() {
+        $query = "SELECT * FROM student_info_for_testimonial where last_printed is null order by exam_year,roll_no";
+        $pdo = $this->database->getPdo();
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
     public function temp_list(){
         $query = "SELECT * FROM temp_list_for_testimonial";
         $pdo = $this->database->getPdo();

@@ -42,6 +42,14 @@ class Tools
         return date("Y{$separator}m{$separator}d", strtotime($str_date));
     }
 
+    public static function long_date($str_date){
+        return date("D, d M, Y", strtotime($str_date));
+    }
+
+    public static function long_datetime($str_date){
+        return date("D, h:i A, d M, Y", strtotime($str_date));
+    }
+
     public static function text_shorten($text, $limit) {
         $text = $text . " ";
         $text = substr($text, 0, $limit);
