@@ -56,7 +56,9 @@ class Router
 
                         //get the page view and set page title
                         $page_title = $module->get_title(); //module page title
+
                         $this->set_header($page_title, $module_header); //document header
+
                         $module->get_view(); //module main page view
 
                         $this->show_errors($custom_errors);
@@ -99,7 +101,8 @@ class Router
     }
 
     private function set_header($page_title, $custom_header){
-        require INCL_DIR . "header.php";
+        if (isset($this->_uri[1]) && $this->_uri[1]!='print')
+            require INCL_DIR . "header.php";
     }
 
     private function set_footer($module_script, $message){

@@ -130,7 +130,7 @@ class Students implements Controller {
                     upazilla = :upazilla,
                     district = :district,
                     exam_name = :exam,
-                    borad_name = :borad,
+                    board_name = :borad,
                     exam_year = :exam_year, 
                     group_tread = :group_tread,
                     result = :result,

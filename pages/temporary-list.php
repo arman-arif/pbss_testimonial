@@ -81,7 +81,7 @@ $stuList = $this->temp_list();
                 </td>
                 <td>
                     <?= $item->exam_name ?> <br>
-                    <?= $item->borad_name ?> <br>
+                    <?= $item->board_name ?> <br>
                     <?= $item->exam_centre ?>
                 </td>
                 <td>

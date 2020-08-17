@@ -48,7 +48,7 @@ global  $uri;
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link<?= $uri[0] == 'certificate' ? ' active' : '' ?>" href="<?= BASE_URL . "certificate" ?>">
                     <span data-feather="layers"></span>
                     Certificate
                 </a>

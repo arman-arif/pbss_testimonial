@@ -35,7 +35,7 @@ $stuList = $this->student_list();
     <table class="table table-striped table-sm">
         <thead>
         <tr class="font-weight-bold bg-info">
-            <th width="5%" class="align-middle text-center">S/N ID <br>CertID <br>Mobile No</th>
+            <th width="5%" class="align-middle text-center">S/N ID <br>CertID <br>Mobile</th>
             <th class="align-middle">
                 Name <br>Father <br>Mother
             </th>
@@ -89,7 +89,7 @@ $serial_no=1;
             </td>
             <td>
                 <?= $item->exam_name ?> <br>
-                <?= $item->borad_name ?> <br>
+                <?= $item->board_name ?> <br>
                 <?= $item->exam_centre ?>
             </td>
             <td>

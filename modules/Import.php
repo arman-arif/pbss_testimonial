@@ -191,7 +191,7 @@ class Import implements Controller
                     upazilla        = :upazilla,
                     district        = :district,
                     exam_name       = :exam,
-                    borad_name      = :borad,
+                    board_name      = :borad,
                     exam_year       = :exam_year, 
                     group_tread     = :group_tread,
                     result          = :result,
@@ -256,8 +256,8 @@ class Import implements Controller
     }
 
     public function move_temp_to_database(){
-        $query = "INSERT INTO student_info_for_testimonial (tcert_id,stu_name,father,mother,gender,village,post_office,post_code,upazilla,district,exam_name,borad_name,exam_year,group_tread,result_status,result,roll_no,exam_centre,reg_no,`session`,date_of_birth,phone_number) 
-            SELECT tcert_id,stu_name,father,mother,gender,village,post_office,post_code,upazilla,district,exam_name,borad_name,exam_year,group_tread,result_status,result,roll_no,exam_centre,reg_no,`session`,date_of_birth,phone_number
+        $query = "INSERT INTO student_info_for_testimonial (tcert_id,stu_name,father,mother,gender,village,post_office,post_code,upazilla,district,exam_name,board_name,exam_year,group_tread,result_status,result,roll_no,exam_centre,reg_no,`session`,date_of_birth,phone_number) 
+            SELECT tcert_id,stu_name,father,mother,gender,village,post_office,post_code,upazilla,district,exam_name,board_name,exam_year,group_tread,result_status,result,roll_no,exam_centre,reg_no,`session`,date_of_birth,phone_number
             FROM temp_list_for_testimonial";
 
         if ($this->database->delete($query))
