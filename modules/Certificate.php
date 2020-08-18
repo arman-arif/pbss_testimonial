@@ -47,6 +47,21 @@ class Certificate implements Controller {
         return 0;
     }
 
+    public function get_single_testimo() {
+        $sql = "SELECT * FROM student_info_for_testimonial WHERE exam_year=:year AND exam_name=:exam AND roll_no=:roll AND reg_no=:reg";
+        $pdo = $this->database->getPdo();
+        $stmt = $pdo->prepare($sql);
+        if ($stmt->execute([
+            ':year' => $_GET['year'],
+            ':exam' => $_GET['exam'],
+            ':roll' => $_GET['roll'],
+            ':reg' => $_GET['reg']
+        ])){
+            return $stmt;
+        }
+        return 0;
+    }
+
 
 
     public function get_view(){

@@ -14,7 +14,9 @@ class FontEnd {
     private static $jquery_ui_theme      = 'assets/vendor/jquery-ui-1.12.1/jquery-ui.theme.min.css';
     private static $alertify_style       = 'assets/vendor/alertifyjs/css/alertify.css';
     private static $alertify_theme       = 'assets/vendor/alertifyjs/css/themes/default.css';
-    private static $themify_icons        = 'assets/vendor/themify-icons/themify-icons.css';
+    public static $themify_icons         = 'assets/vendor/themify-icons/themify-icons.css';
+    public static $certific_css          = 'assets/css/certific.css';
+    public static $certific_print        = 'assets/css/certific-print.css';
 
     //local components, javascript location
     private static $custom_script        = 'assets/js/script.js'; //javascript

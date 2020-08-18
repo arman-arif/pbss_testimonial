@@ -22,7 +22,7 @@ use modules\Users;
 
 <div class="row">
     <div class="col-6 mx-auto">
-        <form action="<?= BASE_URL . 'certificate/print' ?>">
+        <form action="<?= BASE_URL . 'print' ?>">
             <div class="row mb-3">
                 <div class="col-4">
                     <select name="exam" id="exam" class="form-control" required>
@@ -32,12 +32,19 @@ use modules\Users;
                         <option value="VOC">SSC (VOC)</option>
                     </select>
                 </div>
-                <div class="col-4"><input type="text" name="year" placeholder="Exam Year" class="form-control" required></div>
+                <div class="col-4">
+                    <select name="year" id="year" class="form-control" required>
+                        <option value="">- Select Year -</option>
+                        <?php for($y=date('Y',time());$y>1963; $y--): ?>
+                        <option value="<?= $y ?>"><?= $y ?></option>
+                        <?php endfor; ?>
+                    </select>
+                </div>
                 <div class="col-4"><input type="text" name="board" placeholder="Education Board" value="Jashore" readonly class="form-control"></div>
             </div>
             <div class="row">
-                <div class="col-4"><input type="text" name="roll" placeholder="Exam Roll" class="form-control" required></div>
-                <div class="col-4"><input type="text" name="reg" placeholder="Registration No" class="form-control" required></div>
+                <div class="col-4"><input type="text" id="roll" name="roll" placeholder="Exam Roll" class="form-control" required></div>
+                <div class="col-4"><input type="text" id="reg" name="reg" placeholder="Registration No" class="form-control" required></div>
                 <div class="col-4">
                     <input type="hidden" name="type" value="single">
                     <input type="submit" value="Print" class="form-control btn-info" required>

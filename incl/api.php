@@ -8,7 +8,7 @@ use modules\Students;
 
 global $uri;
 Login::check_login($uri);
-//error_reporting(0);
+
 $link = new libraries\Database();
 $pdo = $link->getPdo();
 

@@ -4,7 +4,6 @@ use libraries\Tools;
 use modules\Import;
 use modules\Students;
 
-error_reporting(0);
 $link = new libraries\Database();
 
 if (isset($_GET['uploaded-csv'])){

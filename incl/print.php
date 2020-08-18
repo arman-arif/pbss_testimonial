@@ -1,9 +1,15 @@
 <?php
 defined('ROOT') or die(header("HTTP/1.1 403 Forbidden"));
 //dashboard
+use libraries\FontEnd;
 use libraries\Session;
 use libraries\Tools;
 use modules\Certificate;
+use modules\Login;
+
+global $uri;
+Login::check_login($uri);
+
 $cert = new Certificate();
 $infos = null;
 
@@ -12,8 +18,10 @@ if (isset($_GET['all'])){
         $infos = $cert->get_unprinted_testimo();
     }
 }
-
-
+if (isset($_GET['type']))
+    if ($_GET['type']=='single'){
+        $infos = $cert->get_single_testimo();
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,8 +31,10 @@ if (isset($_GET['all'])){
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Print Certificate</title>
-    <link rel="stylesheet" href="<?= BASE_URL . 'assets/css/certific-print.css' ?>" media="print">
-    <link rel="stylesheet" href="<?= BASE_URL . 'assets/css/certific.css' ?>" media="screen">
+    <link rel="stylesheet" href="<?= BASE_URL . FontEnd::$certific_print ?>" media="print">
+    <link rel="stylesheet" href="<?= BASE_URL . FontEnd::$certific_css ?>" media="screen">
+    <link rel="stylesheet" href="<?= BASE_URL . FontEnd::$themify_icons ?>" media="screen">
+
 </head>
 <body>
 
@@ -44,7 +54,7 @@ if (isset($_GET['all'])){
 
         </div>
         <p class="serial-no"><b>Serial No:</b> <?= $info->tcert_id ?></p>
-        <p class="telephone-no"><b>Telephone:</b> 890343</p>
+        <p class="telephone-no"><b>Telephone:</b> 041-890343</p>
         <h2 class="title">Testimonial</h2>
         <div class="cert-body">
             <p class="parag">
@@ -80,5 +90,21 @@ if (isset($_GET['all'])){
 <?php endif; ?>
 
 </div>
+
+<div class="buttons">
+    <div><a id="downloadPdf" href="<?= '#download' ?>" title="Download PDF"><span class="ti-download"></span></a></div>
+    <div><a id="printHtml" href="<?= '#print' ?>" title="Print HTML"><span class="ti-printer"></span></a></div>
+    <div><a id="generatePdf" href="<?= '#pdf' ?>" title="Generate PDF"><span class="ti-file"></span></a></div>
+</div>
+
+<?= FontEnd::jquery() ?>
+<script>
+    $(document).ready(function () {
+        $('#printHtml').click(function (e) {
+            print();
+        });
+    });
+</script>
+
 </body>
 </html>
