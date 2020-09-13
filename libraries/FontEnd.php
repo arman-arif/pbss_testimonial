@@ -34,10 +34,11 @@ class FontEnd {
     private static $table_export_jspdf   = 'assets/vendor/tableExport.jquery.plugin/libs/jsPDF/jspdf.min.js'; //javascript
     private static $jspdf_autotable      = 'assets/vendor/tableExport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js'; //javascript
     private static $bootboxjs            = 'assets/vendor/bootbox/bootbox.min.js'; //javascript
+    private static $jspdf                = 'assets/vendor/jspdf2/jspdf.umd.min.js'; //javascript
 
     //external cdn links
     private static $normalize_style     = 'https://necolas.github.io/normalize.css/8.0.1/normalize.css';
-    private static $ionicons     = 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js';
+    private static $ionicons            = 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js';
 
     //defined local components
     public static function reset_css(){
@@ -105,6 +106,10 @@ class FontEnd {
 
     public static function popperjs(){
         return self::local_component(self::$popperjs_script, 'js');
+    }
+
+    public static function jspdf(){
+        return self::local_component(self::$jspdf, 'js');
     }
 
     public static function bootboxjs(){

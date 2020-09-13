@@ -22,9 +22,9 @@ $Route->add('Students','/student-list/add-student');
 $Route->add('Certificate','/certificate');
 
 
-$Route->add(null,'/print', function(){
-    require INCL_DIR . 'print.php';
-});
+//$Route->add(null,'/print', function(){
+//    require INCL_DIR . 'print.php';
+//});
 
 $Route->add(null,'/delete', function (){
     require MOD_DIR . 'Delete.php';

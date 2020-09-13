@@ -10,18 +10,18 @@ use modules\Users;
     <h1 class="h2">Print Testimonial Certificate</h1>
 </div>
 
-<div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center h-100">
+<div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-5 mt-5">
 
     <a class="btn btn-lg btn-primary mr-3" href="<?= BASE_URL . 'print?all=unprinted' ?>">Print All Unprinted</a>
     <a class="btn btn-lg btn-primary mr-3" href="<?= BASE_URL . 'print?all' ?>">Print All</a>
-    <a class="btn btn-lg btn-primary mr-3" href="#print?single">Print Single</a>
+    <a class="btn btn-lg btn-primary mr-3" href="#print?single" id="singlePrint">Print Single</a>
 
 </div>
 
 
 
 <div class="row">
-    <div class="col-6 mx-auto">
+    <div class="col-6 mx-auto" id="singleTestForm" style="display: none;">
         <form action="<?= BASE_URL . 'print' ?>">
             <div class="row mb-3">
                 <div class="col-4">
@@ -51,6 +51,7 @@ use modules\Users;
                 </div>
             </div>
         </form>
+        <div class="text-center mt-2"><a id="closeSingle" class="btn btn-outline-danger" href="#">&times;</a></div>
     </div>
 </div>
 

@@ -1,10 +1,16 @@
 <?php
 defined('ROOT') or die(header("HTTP/1.1 403 Forbidden"));
 use libraries\Tools;
+use modules\Certificate;
 use modules\Import;
 use modules\Students;
 
 $link = new libraries\Database();
+
+
+if (isset($_GET['certificate'])){
+    $cert = new Certificate();
+}
 
 if (isset($_GET['uploaded-csv'])){
     $imp = new Import();
@@ -49,7 +55,7 @@ if (isset($_GET['student-info'])){
                 'rstatus'   => $row->result_status,
                 'result'    => str_pad($row->result,4,0,STR_PAD_RIGHT),
                 'phone'     => $row->phone_number,
-                'dob'     => $row->date_of_birth . " [ ". Tools::date_in_words($row->date_of_birth) ." ]",
+                'dob'     => $row->date_of_birth . " [ " . Tools::date_in_words($row->date_of_birth) . " ]",
                 'last_printed'  => $row->last_printed ? Tools::long_datetime($row->last_printed) : null
             ];
             echo json_encode($data);

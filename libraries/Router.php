@@ -81,6 +81,9 @@ class Router
         } elseif ($uri_path == 'fetch' || $uri[0] == 'fetch' && !isset($uri[1])) {
             $GLOBALS['uri'] = $uri;
             require INCL_DIR . 'server.php'; //only for api calling
+        } elseif ($uri_path == 'print' || $uri[0] == 'print' && !isset($uri[1])) {
+            $GLOBALS['uri'] = $uri;
+            require INCL_DIR . 'print.php'; //only for api calling
         } else {
             require INCL_DIR . 'error-page.php';
         }

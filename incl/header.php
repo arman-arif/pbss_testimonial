@@ -27,7 +27,7 @@ echo FontEnd::custom_style();
 <body>
 <?php //here will be the header ?>
 <?php if(isset($uri[0])): ?>
-    <?php if($uri[0]!='login' || $uri[1]!='print'): ?>
+    <?php if($uri[0]!='login' && $uri[0]!='print'): ?>
         <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 mr-0 overflow-hidden" href="<?= BASE_URL ?>"><?= APP_NAME ?></a>
             <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">

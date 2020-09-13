@@ -47,6 +47,16 @@ class Certificate implements Controller {
         return 0;
     }
 
+    public function get_all_testimo(){
+        $sql = "SELECT * FROM student_info_for_testimonial WHERE result_status='Passed'";
+        $pdo = $this->database->getPdo();
+        $stmt = $pdo->prepare($sql);
+        if ($stmt->execute()){
+            return $stmt;
+        }
+        return 0;
+    }
+
     public function get_single_testimo() {
         $sql = "SELECT * FROM student_info_for_testimonial WHERE exam_year=:year AND exam_name=:exam AND roll_no=:roll AND reg_no=:reg";
         $pdo = $this->database->getPdo();
@@ -70,7 +80,6 @@ class Certificate implements Controller {
         } elseif (isset($this->uri[1])){
             switch ($this->uri[1]){
                 case 'print':
-
                     break;
                 default:
                     include PAGE_DIR . 'certificate.php';
@@ -96,6 +105,8 @@ class Certificate implements Controller {
         $script = FontEnd::jquery_ui('js');
         $script .= FontEnd::sweetalert2();
         $script .= FontEnd::alertify('js');
+        $script .= FontEnd::jspdf();
+        $script .= FontEnd::local_component('assets/modules/print.certific.ajax.js','js');
         return $script;
     }
     public function get_style(){
